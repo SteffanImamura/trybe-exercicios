@@ -1,0 +1,64 @@
+/* 1 - Estilize as divs para que, ao passar o cursor por cima das mesmas, elas ganhem uma borda.
+2 - Faça cada div ter uma cor própria.
+3 - Estilize cada uma das tags h3.
+4 - Faça a terceira div ser maior que as demais.
+5 - Deixe as tags ímpares h3 com o texto em itálico. */
+
+div:hover {
+    border-style: dashed;
+}
+
+
+#div1 {
+    color: red;
+}
+
+#div1 h3 {
+    text-align: start;
+}
+
+
+
+#div2 {
+    color: green;
+}
+
+#div2 h3 {
+    text-align: center;
+}
+
+
+
+#div3 {
+    color: purple;
+    margin: 2rem;
+}
+
+#div3 h3 {
+    text-align: end;
+}
+
+
+
+
+#div4 {
+    color: brown;
+}
+
+#div4 h3 {
+    margin: 20px;
+}
+
+
+#div5 {
+    color: orange;
+}
+
+#div5 h3 {
+    padding: 40px;
+}
+
+#div1, #div3, #div5{
+    font-style: italic;
+    text-decoration: underline;
+}
