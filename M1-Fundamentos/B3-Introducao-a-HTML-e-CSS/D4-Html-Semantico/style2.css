@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+}
+header {
+    background-color: aquamarine;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+nav > ul > li {
+    display: inline;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+table {
+    float: right;
+}
+
+table, th, tbody, td {
+    border-collapse:collapse;
+    border-style: solid;
+    border-width: 1px;
+    
+}
+
+td {
+    text-align: center;
+}
+
+.curiosidadeSoco {
+    margin-top: 30px;
+}
+
+.curiosidadeSoco img {
+    float: left;
+}
+
+.visao img {
+    float: right;
+}
+
+.visao {
+    margin-top: 30px;
+}
+
+aside {
+    margin-top: 30px;
+}
+
+aside p {
+    display: inline-block;
+}
+
+aside img {
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+aside .referenciasBibliograficas {
+    margin-top: 30px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
