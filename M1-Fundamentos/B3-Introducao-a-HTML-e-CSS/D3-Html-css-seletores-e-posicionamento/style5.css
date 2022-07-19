@@ -40,7 +40,7 @@ li em {
     color: blue;
 }
 
-.linguagens :is(li) {
+ul.linguagens:nth-of-type(#java) {
     background-color: pink;
 }
 
