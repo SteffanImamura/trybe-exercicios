@@ -17,28 +17,58 @@
 // }
 // fatorial(10)
 
-// 2- Agora, desenvolva um algoritmo que é capaz de inverter uma palavra. Por exemplo, a palavra "banana" seria invertida para "ananab". Utilize a string abaixo como exemplo, depois troque por outras para verificar se seu algoritmo está funcionando corretamente.
+// OK! 2- Agora, desenvolva um algoritmo que é capaz de inverter uma palavra. Por exemplo, a palavra "banana" seria invertida para "ananab". Utilize a string abaixo como exemplo, depois troque por outras para verificar se seu algoritmo está funcionando corretamente.
 // let word = 'tryber';
 
-function invertePalavra(palavra){
-    let invertida = "";
-    for(i=palavra[-1] ; i<palavra[0] ; i--){
-        invertida += i;
-    }
-    console.log(invertida);
-}
-invertePalavra("Trybe");
+// function invertePalavra(palavra){
+//     let invertida = "";
+//     for(i=palavra.length-1 ; i>=0 ; i--){
+//         invertida += palavra[i];
+//     }
+//     console.log(invertida);
+// }
+// invertePalavra("Trybe");
 
-// 3- Considere o array de strings abaixo:
+// OK! 3- Considere o array de strings abaixo:
 // let array = ['java', 'javascript', 'python', 'html', 'css'];
 // Escreva dois algoritmos: um que retorne a maior palavra deste array e outro que retorne a menor. Considere o número de caracteres de cada palavra.
 
+// function maiorElemento(vetor){
+//     let maior = "";
+//     for(i=0 ; i<vetor.length ; i++){
+//         if(vetor[i].length > maior.length){
+//             maior = vetor[i];
+//         }
+//     }
+//     console.log(maior);
+// }
+// maiorElemento(array)
 
+// function menorElemento(vetor) {
+//     let menor = vetor[0];
+//     for(i = 1 ; i < vetor.length ; i++) {
+//         if(vetor[i].length < menor.length) {
+//             menor = vetor[i];
+//         }
+//     }
+//     console.log(menor);
+// }
+// menorElemento(array)
 
 // 4- Um número primo é um número inteiro maior do que 1 que possui somente dois divisores, ou seja, é divisível por 1 e por ele mesmo. Sabendo disso, escreva um algoritmo que retorne o maior número primo entre 2 e 50.
 
-
-
+function maiorPrimo2a50(){
+    let maiorPrimo = 0;
+    for(i=2 ; i<=50 ; i++){
+        if(i%){  //dividir e dps verificar a qtd de divisores
+            if(i > i-1){
+            maiorPrimo = i;
+            }
+        }
+    }
+    console.log(maiorPrimo);
+}
+maiorPrimo2a50()
 
 // Bônus
 // 1- Agora vamos trabalhar com algumas formas geométricas! Faça um programa que, dado um valor n qualquer, seja n > 1, imprima na tela um quadrado feito de asteriscos de lado de tamanho n. Por exemplo:
