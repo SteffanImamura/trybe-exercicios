@@ -1,11 +1,11 @@
 // Parte I - Objetos e For / In
 // Usando o objeto abaixo, faça os exercícios a seguir:
 
-let info = {
-    personagem: 'Margarida',
-    origem: 'Pato Donald',
-    nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
-};
+// let info = {
+//     personagem: 'Margarida',
+//     origem: 'Pato Donald',
+//     nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+// };
 
 // OK! 1 - Imprima no console uma mensagem de boas - vindas para a personagem acima, incluindo seu nome.Valor esperado no console:
 // Bem - vinda, Margarida
@@ -67,6 +67,10 @@ let info = {
 
 
 
+
+
+
+
 // Usando o objeto abaixo, faça os exercícios a seguir:
 // let leitor = {
 //     nome: 'Julia',
@@ -81,12 +85,12 @@ let info = {
 //     ],
 // };
 
-// 🚀 6 - Acesse as chaves nome, sobrenome e titulo, que está dentro da chave livrosFavoritos, e faça um console.log no seguinte formato: "O livro favorito de Julia Pessoa se chama 'O Pior Dia de Todos'".
+// OK! 🚀 6 - Acesse as chaves nome, sobrenome e titulo, que está dentro da chave livrosFavoritos, e faça um console.log no seguinte formato: "O livro favorito de Julia Pessoa se chama 'O Pior Dia de Todos'".
+
+//console.log("O livro favorito de "+leitor.nome+" "+leitor.sobrenome+" se chama "+leitor.livrosFavoritos[0].titulo); 
 
 
-
-
-// 🚀 7 - Adicione um novo livro favorito na chave livrosFavoritos, que é um array.Atribua a esta chave um objeto contendo as seguintes informações:
+// OK! 🚀 7 - Adicione um novo livro favorito na chave livrosFavoritos, que é um array.Atribua a esta chave um objeto contendo as seguintes informações:
 
 // {
 //     titulo: 'Harry Potter e o Prisioneiro de Azkaban',
@@ -94,13 +98,17 @@ let info = {
 //             editora: 'Rocco',
 //   }
 
+// leitor.livrosFavoritos[1] = {
+//     titulo: "Harry Potter e o Prisioneiro de Azkaban",
+//     autor: "JK Rowling",
+//     editora: "Rocco",
+// }
+//console.log(leitor.livrosFavoritos);
 
 
+// OK! 🚀 8 - Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: "Julia tem 2 livros favoritos".
 
-
-// 🚀 8 - Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: "Julia tem 2 livros favoritos".
-
-
+//console.log(leitor.nome+" tem "+leitor.livrosFavoritos.length+" livros favoritos")
 
 
 
@@ -108,41 +116,105 @@ let info = {
 // Agora vamos fazer um exercício que vai deixar nítido como funções com responsabilidades bem definidas deixam o código mais bem escrito.
 // A manipulação de arrays pode ser complexa em alguns momentos e por isso o JavaScript conta com diversos métodos para a sua manipulação.A documentação é sempre a nossa maior aliada, se você tiver curiosidade de ler mais sobre esses métodos, clique aqui para acessar a documentação completa.Não se preocupe em entender todos os métodos, eles serão trabalhados cada vez com mais frequência durante o curso e sempre que um método novo for necessário ele será ensinado a você.
 //     Spoiler - alert: para os exercícios do dia, os métodos split, join e reverse podem ser muito úteis.
-// 1 - Crie uma função que receba uma string e retorne true se for um palíndromo, ou false, se não for.
+
+
+// OK! 1 - Crie uma função que receba uma string e retorne true se for um palíndromo, ou false, se não for.
 // Exemplo de palíndromo: arara.
 //         verificaPalindrome('arara');
 // Retorno esperado: true
 // verificaPalindrome('desenvolvimento');
 // Retorno esperado: false
 
+// function verificaPalindromo(string){
+//     let palindromo = "";
+//     for(i=string.length-1 ; i>=0 ; i--){
+//         palindromo += string[i];
+//     }
+//     if(palindromo == string){
+//         console.log("true");
+//     }else{
+//         console.log("false");
+//     }
+// }
+// verificaPalindromo("banana")
 
 
 
-
-
-// 2 - Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
+// OK! 2 - Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
 // Array de teste: [2, 3, 6, 7, 10, 1];.
 // Valor esperado no retorno da função: 4.
 
+// let teste = [2, 3, 6, 7, 10, 1];
+
+// function indiceMaiorElementoArray(array){
+//     let indiceMaior = 0;
+//     let maior = array[0];
+//     for(i=1 ; i<array.length ; i++){
+//         if(array[i]>maior){
+//             indiceMaior = array[i];
+//         }
+//     }
+//     console.log(array.indexOf(indiceMaior));
+// }
+// indiceMaiorElementoArray(teste)
 
 
-
-
-// 3 - Crie uma função que receba um array de inteiros e retorne o índice do menor valor.
+// OK! 3 - Crie uma função que receba um array de inteiros e retorne o índice do menor valor.
 // Array de teste: [2, 4, 6, 7, 10, 0, -3];.
 // Valor esperado no retorno da função: 6.
-// 4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
+
+// let teste2 = [2, 4, 6, 7, 10, 0, -3];
+
+// function indiceMenorElementoArray(array){
+//     let indiceMenor = 0;
+//     let menor = array[0];
+//     for(i=1 ; i<array.length ; i++){
+//         if(array[i]<menor){
+//             indiceMenor = array[i];
+//         }
+//     }
+//     console.log(array.indexOf(indiceMenor));
+// }
+// indiceMenorElementoArray(teste2)
+
+// OK! 4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
 // Array de teste: ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];.
 // Valor esperado no retorno da função: Fernanda.
 
+// let teste3 = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 
+// function maiorElemento(array){
+//     let maior = "";
+//     for(i=0 ; i<array.length ; i++){
+//         if(array[i].length > maior.length){
+//             maior = array[i];
+//         }
+//     }
+//     console.log(maior);
+// }
+// maiorElemento(teste3)
 
 
 // 🚀 5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
 // Array de teste: [2, 3, 2, 5, 8, 2, 3];.
 // Valor esperado no retorno da função: 2.
 
+let teste4 = [2, 3, 2, 5, 8, 2, 3];
 
+function maisRepete(array){
+    array.sort();
+    let atual = "";
+    let repete = 0;
+
+    for (i=0 ; i<array.length ; i++){
+        if(array[i] != atual){
+            if(repete>0){
+                console.log();
+            }
+        }
+    }
+}
+maisRepete(teste4)
 
 // 6 - Crie uma função que receba um número natural(número inteiro não negativo) N e retorne o somatório de todos os números de 1 até N.
 // Valor de teste: N = 5.
