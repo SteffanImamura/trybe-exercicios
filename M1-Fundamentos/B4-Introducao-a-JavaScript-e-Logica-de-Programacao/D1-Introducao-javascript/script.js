@@ -223,6 +223,7 @@
 // Salário bruto de R$ 1.556,95 a R$ 2.594,92: alíquota de 9%
 // Salário bruto de R$ 2.594,93 a R$ 5.189,82: alíquota de 11%
 // Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
+// 
 // IR (Imposto de Renda)
 // Até R$ 1.903,98: isento de imposto de renda
 // De R$ 1.903,99 a 2.826,65: alíquota de 7,5% e parcela de R$ 142,80 a deduzir do imposto
@@ -245,40 +246,43 @@
 function salarioLiquido(salarioBruto) {
     //INSS
     let parcelaINSS = 0;
-    switch(true){
-        case salarioBruto<1556.94:
-            return parcelaINSS = 0.8*salarioBruto;
+    switch (true) {
+        case salarioBruto < 1556.94:
+            parcelaINSS = 0.08 * salarioBruto;
             break;
-        case 1556.95<salarioBruto<2594.92:
-            return parcelaINSS = 0.9*salarioBruto;
+        case salarioBruto > 1556.95 && salarioBruto < 2594.92:
+            parcelaINSS = 0.09 * salarioBruto;
             break;
-        case 2594.93<salarioBruto<5189.82:
-            return parcelaINSS = 0.11*salarioBruto;
+        case salarioBruto > 2594.93 && salarioBruto < 5189.82:
+            parcelaINSS = 0.11 * salarioBruto;
             break;
-        case salarioBruto>=5189.83:
-            return parcelaINSS = 570,88;
+        case  salarioBruto > 5189.83:
+            parcelaINSS = 570.88;
             break;
     }
+    let INSSdeduzido = salarioBruto - parcelaINSS;
+    console.log(INSSdeduzido);
     //IR
     let parcelaIR = 0;
-    switch(true){
-        case salarioBruto<1903.98:
-            return 0;
+    switch (true) {
+        case INSSdeduzido < 1903.98:
+            parcelaIR = 0;
             break;
-        case 1903.99<salarioBruto<2826.65:
-            return parcelaIR = 0.075*salarioBruto - 142.80;
+        case INSSdeduzido > 1903.99 && INSSdeduzido < 2826.65:
+            parcelaIR = 0.075 * INSSdeduzido - 142.80;
             break;
-        case 2826.66<salarioBruto<3751.05:
-            return parcelaIR = 0.15*salarioBruto - 354.80;
+        case INSSdeduzido > 2826.66 && INSSdeduzido < 3751.05:
+            parcelaIR = 0.15 * INSSdeduzido - 354.80;
             break;
-        case 3751.06<salarioBruto<4664.68:
-            return parcelaIR = 0.225*salarioBruto - 636.13;
+        case INSSdeduzido > 3751.06 && INSSdeduzido < 4664.68:
+            parcelaIR = 0.225 * INSSdeduzido - 636.13;
             break;
-        case salarioBruto>=4664.68:
-            return parcelaIR = 0.275*salarioBruto - 869.36;
+        case INSSdeduzido >= 4664.68:
+            parcelaIR = 0.275 * INSSdeduzido - 869.36;
             break;
     }
-    console.log(`O salário líquido será ${salarioBruto}-${parcelaINSS}-${parcelaIR}`)
+    let resultado = INSSdeduzido - parcelaIR;
+    console.log(`O salário líquido será ${resultado}`);
 }
-salarioLiquido(5900.43)
+salarioLiquido(3000)
 
