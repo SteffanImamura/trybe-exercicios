@@ -24,7 +24,18 @@ function createDaysOfTheWeek() {
 // Copiar
 let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-
+for(let i = 0 ; i < decemberDaysList.length ; i+=1) {
+  let dias = document.getElementById('days');
+  let criaDias = document.createElement('li');
+  criaDias.className = 'day';
+  criaDias.innerText = decemberDaysList[i];
+  if(decemberDaysList[i] === 24 || decemberDaysList[i] === 25 || decemberDaysList[i] === 31){
+    criaDias.classList.add('holiday');
+  } else if (decemberDaysList[i] === 4 || decemberDaysList[i] === 11 || decemberDaysList[i] === 18 || decemberDaysList[i] === 25){
+    criaDias.classList.add('friday');
+  }
+  dias.appendChild(criaDias);
+}
 
 // 🚀 Exercício 2:
 // Implemente uma função que crie dinamicamente um botão com o nome "Feriados".
@@ -32,6 +43,12 @@ let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
 // Adicione a este botão a ID "btn-holiday"
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container"
 
+let button = document.createElement('button');
+button.innerText = 'Feriados';
+button.id = 'btn-holiday';
+
+let containerBotao = document.querySelector('.buttons-container');
+containerBotao.appendChild(button);
 
 
 // 🚀 Exercício 3:
@@ -39,6 +56,16 @@ let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
 // Adicione ao botão "Feriados" um evento de "click" que altere a cor de fundo dos dias que possuem a classe "holiday"
 // 👀 É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial com a cor "rgb(238,238,238)".
 
+button.addEventListener('click', function(){
+  let classeHoliday = document.querySelectorAll('.holiday');
+  for(let value of classeHoliday){
+    if(value.style.backgroundColor === 'green') {
+      value.style.backgroundColor = 'rgb(238,238,238)';
+    } else{
+      value.style.backgroundColor = 'green';
+    }
+  }
+});
 
 
 // 🚀 Exercício 4:
